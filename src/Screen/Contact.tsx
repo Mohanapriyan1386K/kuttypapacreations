@@ -1,5 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import SEO from "../component/SEO";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -36,6 +37,13 @@ export default function ContactForm() {
   };
 
   return (
+    <>
+      <SEO
+            title="Kutty Papa Creations | Customized Gifts"
+            description="Buy customized gifts, resin art, mugs, photo frames and handmade creations."
+            keywords="custom gifts,resin art,photo frame,mugs,birthday gifts"
+            url="https://kuttypapacreations-nine.vercel.app/contact"
+          />
     <section className="relative min-h-screen overflow-hidden bg-[#FFF5FB] flex items-center justify-center px-4 py-12">
       {/* Background Animation */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#F6339A]/30 rounded-full blur-[120px] animate-pulse"></div>
@@ -118,5 +126,6 @@ export default function ContactForm() {
         </div>
       </div>
     </section>
+    </>
   );
 }
