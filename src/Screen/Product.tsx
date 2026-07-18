@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Category, Product } from "../type";
 import { useDispatch } from "react-redux";
 import { openModal } from "../Redux/Reducers/ModalReducer";
