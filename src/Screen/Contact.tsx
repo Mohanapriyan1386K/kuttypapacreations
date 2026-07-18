@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ export default function ContactForm() {
 
     console.log(formData);
 
-    alert("Enquiry Submitted Successfully!");
+    toast.success("Enquiry Submitted Successfully!");
 
     setFormData({
       name: "",

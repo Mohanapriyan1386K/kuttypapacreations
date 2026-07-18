@@ -190,43 +190,45 @@ function ProductPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-3">
-            {products?.map((item) => (
-              <AnimatedCard key={item._id}>
-                <div className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-pink-300  ">
+            {products.map((item, index) => (
+              <AnimatedCard key={item._id} index={index} className="h-full">
+                <div className="group relative h-full overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-300 hover:shadow-pink-300">
+                  {/* Image */}
                   <div className="overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full aspect-square object-cover duration-700 group-hover:scale-100"
+                      className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
 
-                  {/* Gradient Overlay */}
+                  {/* Overlay */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 duration-500"></div>
-
-                  <div className="p-5">
-                    <h2 className="font-bold text-lg line-clamp-2">
+                  {/* Content */}
+                  <div className="relative z-10 flex h-[220px] flex-col p-5">
+                    <h2 className="line-clamp-2 text-lg font-bold">
                       {item.title}
                     </h2>
 
-                    <p className="text-gray-500 mt-2 text-sm line-clamp-2">
+                    <p className="mt-2 line-clamp-2 text-sm text-gray-500">
                       {item.description}
                     </p>
 
-                    <div className="flex justify-between items-center mt-4">
-                      <p className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+                    <div className="mt-4 flex items-center justify-between">
+                      <p className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-2xl font-bold text-transparent">
                         ₹{item.price}
                       </p>
 
-                      <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">
+                      <span className="rounded-full bg-green-100 px-3 py-1 text-xs text-green-600">
                         In Stock
                       </span>
                     </div>
 
                     <button
+                      type="button"
                       onClick={() => handleViewModalOpen(item)}
-                      className="mt-5 w-full rounded-xl py-3 font-semibold text-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 hover:scale-105 hover:shadow-xl duration-300"
+                      className="mt-auto w-full rounded-xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
                     >
                       View Product
                     </button>
