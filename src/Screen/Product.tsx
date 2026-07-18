@@ -3,6 +3,9 @@ import type { Category, Product } from "../type";
 import { useDispatch } from "react-redux";
 import { openModal } from "../Redux/Reducers/ModalReducer";
 import { API_BASE } from "../Constent/Constent";
+import PageAnimation from "../component/PageAnimation";
+import { motion } from "framer-motion";
+import AnimatedCard from "../component/AnimatedCard";
 
 function ProductPage() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -34,7 +37,7 @@ function ProductPage() {
         modalname: "PRODUCTVIEW",
         data: {
           product: data,
-          path:"client",
+          path: "client",
           width: "5xl",
         },
       }),
@@ -114,83 +117,137 @@ function ProductPage() {
   };
 
   return (
-    <div>
-      {/* Sticky Category */}
-      <div className="  sticky top-16 z-50 bg-[#3F4555]  shadow-sm">
-        <div className="max-w-7xl mx-auto  overflow-x-auto scrollbar-hide">
-          <div className="flex gap-3 min-w-max px-3 py-3">
-            <button
-              onClick={handleAll}
-              className={`px-5 py-2 rounded-full whitespace-nowrap ${
-                selectedCategory === ""
-                  ? "bg-pink-500 text-white"
-                  : "bg-gray-200"
-              }`}
+    <PageAnimation>
+      <div>
+        {/* Sticky Category */}
+        <div className="sticky top-16 z-50 bg-[#3F4555]/90 backdrop-blur-lg shadow-lg border-b border-white/10">
+          <div className="max-w-7xl mx-auto overflow-x-auto scrollbar-hide">
+            <motion.div
+              className="flex gap-3 min-w-max px-3 py-3"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              All
-            </button>
-
-            {categories?.map((item) => (
-              <button
-                key={item._id}
-                onClick={() => handleCategoryClick(item)}
-                className={`px-5 py-2 rounded-full whitespace-nowrap ${
-                  selectedCategory === item._id
-                    ? "bg-pink-500 text-white"
-                    : "bg-gray-200"
+              <motion.button
+                whileHover={{
+                  scale: 1.08,
+                  y: -2,
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                onClick={handleAll}
+                className={`relative px-5 py-2 rounded-full font-medium whitespace-nowrap transition-all duration-300 ${
+                  selectedCategory === ""
+                    ? "bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 text-white shadow-lg shadow-pink-500/40"
+                    : "bg-white text-gray-700 hover:bg-pink-100"
                 }`}
               >
-                {item.name}
-              </button>
-            ))}
+                {selectedCategory === "" && (
+                  <motion.div
+                    layoutId="activeCategory"
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 -z-10"
+                  />
+                )}
+                All
+              </motion.button>
+
+              {categories.map((item, index) => (
+                <motion.button
+                  key={item._id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: index * 0.05,
+                    duration: 0.3,
+                  }}
+                  whileHover={{
+                    scale: 1.08,
+                    y: -2,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleCategoryClick(item)}
+                  className={`relative px-5 py-2 rounded-full font-medium whitespace-nowrap transition-all duration-300 ${
+                    selectedCategory === item._id
+                      ? "bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 text-white shadow-lg shadow-pink-500/40"
+                      : "bg-white text-gray-700 hover:bg-pink-100"
+                  }`}
+                >
+                  {selectedCategory === item._id && (
+                    <motion.div
+                      layoutId="activeCategory"
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 -z-10"
+                    />
+                  )}
+
+                  {item.name}
+                </motion.button>
+              ))}
+            </motion.div>
           </div>
         </div>
-      </div>
 
-      {/* Products */}
+        {/* Products */}
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-3">
-          {products?.map((item) => (
-            <div
-              key={item._id}
-              className="rounded-xl shadow-sm overflow-hidden bg-white shadow-3xl shadow-pink-400"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full aspect-square object-cover"
-              />
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-3">
+            {products?.map((item) => (
+              <AnimatedCard key={item._id}>
+                <div className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-pink-300  ">
+                  <div className="overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full aspect-square object-cover duration-700 group-hover:scale-100"
+                    />
+                  </div>
 
-              <div className="p-3">
-                <h2 className="font-semibold line-clamp-2">{item.title}</h2>
+                  {/* Gradient Overlay */}
 
-                <p className="text-gray-500 text-sm line-clamp-2">
-                  {item.description}
-                </p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 duration-500"></div>
 
-                <p className="text-pink-600 font-bold text-xl mt-2">
-                  ₹{item.price}
-                </p>
+                  <div className="p-5">
+                    <h2 className="font-bold text-lg line-clamp-2">
+                      {item.title}
+                    </h2>
 
-                <button
-                  className="mt-3 w-full bg-pink-500 text-white rounded-lg py-2"
-                  onClick={() => handleViewModalOpen(item)}
-                >
-                  View
-                </button>
-              </div>
+                    <p className="text-gray-500 mt-2 text-sm line-clamp-2">
+                      {item.description}
+                    </p>
+
+                    <div className="flex justify-between items-center mt-4">
+                      <p className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+                        ₹{item.price}
+                      </p>
+
+                      <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">
+                        In Stock
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={() => handleViewModalOpen(item)}
+                      className="mt-5 w-full rounded-xl py-3 font-semibold text-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 hover:scale-105 hover:shadow-xl duration-300"
+                    >
+                      View Product
+                    </button>
+                  </div>
+                </div>
+              </AnimatedCard>
+            ))}
+          </div>
+
+          {loading && (
+            <div className="text-center py-5 text-lg">Loading...</div>
+          )}
+
+          {!hasMore && (
+            <div className="text-center py-5 text-gray-500">
+              No More Products
             </div>
-          ))}
+          )}
         </div>
-
-        {loading && <div className="text-center py-5 text-lg">Loading...</div>}
-
-        {!hasMore && (
-          <div className="text-center py-5 text-gray-500">No More Products</div>
-        )}
       </div>
-    </div>
+    </PageAnimation>
   );
 }
 

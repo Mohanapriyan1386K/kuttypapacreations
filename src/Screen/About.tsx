@@ -8,8 +8,13 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Images } from "../Constent/imageConstent";
+import PageAnimation from "../component/PageAnimation";
+
+import {useNavigate} from "react-router-dom"
 
 export default function About() {
+
+  const  navigate =useNavigate()
   const features = [
     {
       icon: <Heart size={32} />,
@@ -33,8 +38,22 @@ export default function About() {
     },
   ];
 
+ const openWhatsApp = () => {
+  const message = encodeURIComponent(
+    "Hi, I'm interested in your products."
+  );
+
+  window.open(
+    `https://wa.me/917904595497?text=${message}`,
+    "_blank"
+  );
+};
+
+
   return (
-    <div className="bg-slate-950 text-white">
+     <PageAnimation>
+
+         <div className="bg-slate-950 text-white">
       {/* HERO */}
       <section
         className="relative overflow-hidden  bg-no-repeat bg-center bg-contain h-[530px]"
@@ -61,11 +80,17 @@ export default function About() {
             </p>
 
             <div className="flex flex-row gap-4 mt-8 ">
-              <button className="bg-white text-black  px-4 md:px-7 md:py-3 text-[14px] rounded-full font-semibold hover:scale-105 duration-300">
+              <button className="bg-white text-black  px-4 md:px-7 md:py-3 text-[14px] rounded-full font-semibold hover:scale-105 duration-300"
+               onClick={()=> navigate("/products")}
+              
+              >
                 Explore Products
               </button>
 
-              <button className="border border-white px-7 py-3 rounded-full flex items-center gap-2 hover:bg-white hover:text-black duration-300">
+              <button className="border border-white px-7 py-3 rounded-full flex items-center gap-2 hover:bg-white hover:text-black duration-300"
+               onClick={openWhatsApp}
+              
+              >
                 <MessageCircle size={20} />
                 WhatsApp Us
               </button>
@@ -203,5 +228,7 @@ export default function About() {
         </div>
       </section>
     </div>
+     </PageAnimation>
+  
   );
 }

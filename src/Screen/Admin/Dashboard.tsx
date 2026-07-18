@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Package, Grid2x2, MessageSquare } from "lucide-react";
 import { API_BASE } from "../../Constent/Constent";
-
+import PageAnimation from "../../component/PageAnimation";
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState({
@@ -39,29 +39,31 @@ function Dashboard() {
   ];
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen mt-10 ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cards?.map((item, index) => {
-          const Icon = item.icon;
+    <PageAnimation>
+      <div className="p-6 bg-gray-100 min-h-screen mt-10 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards?.map((item, index) => {
+            const Icon = item.icon;
 
-          return (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-md p-6 flex items-center justify-between hover:shadow-xl transition"
-            >
-              <div>
-                <p className="text-gray-500">{item.title}</p>
-                <h2 className="text-4xl font-bold mt-2">{item.value}</h2>
-              </div>
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-md p-6 flex items-center justify-between hover:shadow-xl transition"
+              >
+                <div>
+                  <p className="text-gray-500">{item.title}</p>
+                  <h2 className="text-4xl font-bold mt-2">{item.value}</h2>
+                </div>
 
-              <div className={`${item.bg} p-4 rounded-full text-white`}>
-                <Icon size={30} />
+                <div className={`${item.bg} p-4 rounded-full text-white`}>
+                  <Icon size={30} />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </PageAnimation>
   );
 }
 
