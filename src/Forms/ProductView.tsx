@@ -7,10 +7,10 @@ import {
   Settings,
   Heart,
   ShoppingCart,
-  Pencil,
+  // Pencil,
 } from "lucide-react";
 import { useDispatch } from "react-redux";
-import { data, Link } from "react-router-dom";
+// import { data, Link } from "react-router-dom";
 import { openModal } from "../Redux/Reducers/ModalReducer";
 import InstagramEmbed from "../component/InstagramEmbed";
 

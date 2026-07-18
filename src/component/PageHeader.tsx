@@ -9,7 +9,7 @@ type Props = {
 
 function PageHeader({
   title,
-  subtitle,
+  // subtitle,
   buttonText = "Add New",
   onClick,
 }: Props) {

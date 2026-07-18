@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import type { Category } from "../type";
+// import type { Category } from "../type";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../Redux/Reducers/ModalReducer";
 import { API_BASE } from "../Constent/Constent";
 
-interface Props {
-  categoryData: Category | null;
-  refreshList:()=>void;
-}
+// interface Props {
+//   categoryData: Category | null;
+//   refreshList:()=>void;
+// }
 
 function CategoryForm({ categoryData,refreshList, onClose }:any) {
 
