@@ -131,7 +131,7 @@ function ProductForm({ proData, refreshList, onClose }: any) {
           >
             <option value="">Select Category</option>
 
-            {categories.map((item: any) => (
+            {categories?.map((item: any) => (
               <option key={item._id} value={item._id}>
                 {item.name}
               </option>

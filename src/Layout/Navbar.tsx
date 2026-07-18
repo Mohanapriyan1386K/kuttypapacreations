@@ -23,7 +23,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
+          {navItems?.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
@@ -66,7 +66,7 @@ export default function Navbar() {
         } bg-slate-900`}
       >
         <nav className="flex flex-col px-5 py-4 gap-4">
-          {navItems.map((item) => (
+          {navItems?.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}

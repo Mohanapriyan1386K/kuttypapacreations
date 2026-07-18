@@ -111,7 +111,7 @@ export default function About() {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((item) => (
+            {features?.map((item) => (
               <div
                 key={item.title}
                 className="bg-slate-800 rounded-3xl p-8 hover:-translate-y-3 duration-300 border border-slate-700"

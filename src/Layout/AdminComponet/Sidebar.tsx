@@ -1,8 +1,11 @@
 import { X, LayoutDashboard, Database,CassetteTape ,LogOut,MailIcon } from "lucide-react";
+import { useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { openModal } from "../../Redux/Reducers/ModalReducer";
 
 export default function Sidebar({ open, setOpen }:any) {
   const { pathname } = useLocation();
+  const dispatch=useDispatch()
 
   const menus = [
     {
@@ -39,6 +42,27 @@ export default function Sidebar({ open, setOpen }:any) {
     
   ];
 
+
+  
+   const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("admin");
+
+    window.location.href = "/login";
+  }
+
+  const handleModalOpen=()=>{
+      dispatch((openModal(
+        {
+          modalname:"CONFIRAMTIONMODAL",
+          data:{
+            onOk:()=>handleLogout(),
+            width:"xl"
+          }
+        }
+      )))
+  }
+
   return (
     <>
       {/* Overlay */}
@@ -73,7 +97,7 @@ export default function Sidebar({ open, setOpen }:any) {
         </div>
 
         <nav className="p-4 space-y-2">
-          {menus.map((menu) => {
+          {menus?.map((menu) => {
             const Icon = menu.icon;
 
             return (
@@ -95,7 +119,9 @@ export default function Sidebar({ open, setOpen }:any) {
         </nav>
 
         <div className="absolute bottom-4 w-full px-4">
-          <button className="w-full flex items-center justify-center gap-2 rounded-lg bg-red-600 py-3 hover:bg-red-700">
+          <button
+           onClick={() => handleModalOpen()}
+          className="w-full flex items-center justify-center gap-2 rounded-lg bg-red-600 py-3 hover:bg-red-700">
             <LogOut size={18} />
             Logout
           </button>

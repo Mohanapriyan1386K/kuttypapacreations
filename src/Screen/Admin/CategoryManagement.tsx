@@ -94,8 +94,8 @@ function CategoryManagement() {
             </thead>
 
             <tbody className="divide-y divide-gray-100">
-              {categories.length > 0 ? (
-                categories.map((item) => (
+              {categories?.length > 0 ? (
+                categories?.map((item) => (
                   <tr
                     key={item._id}
                     className="even:bg-gray-50 hover:bg-indigo-50 transition-all duration-200"

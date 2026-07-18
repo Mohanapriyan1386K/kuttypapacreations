@@ -130,7 +130,7 @@ function ProductPage() {
               All
             </button>
 
-            {categories.map((item) => (
+            {categories?.map((item) => (
               <button
                 key={item._id}
                 onClick={() => handleCategoryClick(item)}
@@ -151,7 +151,7 @@ function ProductPage() {
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-3">
-          {products.map((item) => (
+          {products?.map((item) => (
             <div
               key={item._id}
               className="rounded-xl shadow-sm overflow-hidden bg-white shadow-3xl shadow-pink-400"

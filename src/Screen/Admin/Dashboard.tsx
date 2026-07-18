@@ -41,7 +41,7 @@ function Dashboard() {
   return (
     <div className="p-6 bg-gray-100 min-h-screen mt-10 ">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cards.map((item, index) => {
+        {cards?.map((item, index) => {
           const Icon = item.icon;
 
           return (

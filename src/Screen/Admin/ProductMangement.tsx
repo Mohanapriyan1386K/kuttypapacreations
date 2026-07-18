@@ -173,7 +173,7 @@ function ProductMangement() {
             >
               <option value="">Select Category</option>
 
-              {categories.map((item: any) => (
+              {categories?.map((item: any) => (
                 <option key={item._id} value={item._id}>
                   {item.name}
                 </option>
@@ -213,8 +213,8 @@ function ProductMangement() {
             </thead>
 
             <tbody className="divide-y divide-gray-100">
-              {product.length > 0 ? (
-                product.map((item) => (
+              {product?.length > 0 ? (
+                product?.map((item) => (
                   <tr
                     key={item._id}
                     className="even:bg-gray-50 hover:bg-blue-50 transition-all duration-200"
@@ -340,7 +340,7 @@ function ProductMangement() {
           </table>
         </div>
 
-        {product.length > 0 && (
+        {product?.length > 0 && (
           <div className="flex items-center justify-between border-t p-4">
             <button
               disabled={page === 1}

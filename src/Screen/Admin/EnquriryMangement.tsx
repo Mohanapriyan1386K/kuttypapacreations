@@ -120,7 +120,7 @@ export default function EnquiryMangeMent() {
                   </td>
                 </tr>
               ) : (
-                enquiries.map((item, index) => (
+                enquiries?.map((item, index) => (
                   <tr
                     key={item._id}
                     className="hover:bg-blue-50 even:bg-gray-50 transition-all duration-200"
