@@ -4,7 +4,6 @@ import { Toaster } from "react-hot-toast";
 
 import { AppRouter } from "./Routes/AppRouter";
 import GlobalModal from "./component/GlobalModal";
-import PageAnimation from "./component/PageAnimation";
 
 const Loader = () => (
   <div className="flex items-center justify-center h-screen bg-white">
