@@ -7,6 +7,7 @@ import type { Category } from "../../type";
 import { API_BASE } from "../../Constent/Constent";
 import axios from "axios";
 import PageAnimation from "../../component/PageAnimation";
+import toast from "react-hot-toast";
 
 function CategoryManagement() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function CategoryManagement() {
       handleGetCategory();
     } catch (error) {
       console.error("Delete Error:", error);
-      alert("Failed to delete laptop.");
+      toast.error("Failed to delete laptop.");
     }
   };
 

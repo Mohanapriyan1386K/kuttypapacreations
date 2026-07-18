@@ -14,7 +14,7 @@ export default function Login() {
     e.preventDefault();
 
     if (!username || !password) {
-      alert("Please enter Username and Password");
+      toast.error("Please enter Username and Password");
       return;
     }
 
