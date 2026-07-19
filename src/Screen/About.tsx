@@ -57,56 +57,63 @@ export default function About() {
         <div className="bg-slate-950 text-white">
           {/* HERO */}
           <section
-            className="relative overflow-hidden bg-no-repeat h-[660px]"
+            className="relative overflow-hidden h-[700px] md:h-[660px] bg-no-repeat bg-cover md:bg-contain bg-center md:[background-position:calc(100%-40px)_center]"
             style={{
               backgroundImage: `url(${Images.her})`,
-              backgroundSize: "contain",
-              backgroundPosition: "calc(100% - 40px) center", // 40px gap from right
             }}
           >
-            <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 items-center gap-10">
-              <div>
-                <span className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm">
-                  <Sparkles size={18} />
-                  Handmade Resin Gifts
-                </span>
+            {/* Mobile Overlay */}
+            <div className="absolute inset-0 bg-black/65 md:bg-transparent"></div>
 
-                <h1 className="text-5xl md:text-5xl font-extrabold mt-6 leading-tight">
-                  {/* Papakutty */}
-                  <span className="block text-amber-300">
-                    Handmade Resin Gifts & Personalized Custom Keepsakes
+            {/* Optional Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#06071B]/95 via-[#06071B]/70 to-transparent"></div>
+
+            <div className="relative z-10 max-w-7xl mx-auto h-full px-5 sm:px-6">
+              <div className="grid lg:grid-cols-2 items-center h-full">
+                {/* Left Content */}
+                <div className="max-w-xl pt-16 md:pt-0">
+                  <span className="inline-flex items-center gap-2 bg-white/12 backdrop-blur-md px-4 py-2 rounded-full text-xs md:text-sm border ">
+                    <Sparkles size={16} />
+                    Handmade Resin Gifts
                   </span>
-                </h1>
 
-                <p className="mt-6 text-lg text-slate-100 leading-8">
-                  Made with Love | Pan India Delivery
-                </p>
+                  <h1 className="mt-5 text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                    <span className="block text-amber-300">
+                      Handmade Resin Gifts
+                    </span>
 
-                <div className="flex flex-row gap-4 mt-8 ">
-                  <button
-                    className="bg-white text-black  px-4 md:px-4 md:py-2 text-[12px] rounded-full font-semibold hover:scale-105 duration-300"
-                    onClick={() => navigate("/products")}
-                  >
-                    Explore Products
-                  </button>
+                    <span className="block text-white">& Personalized</span>
 
-                  <button
-                    className="border border-white px-7 py-3 rounded-full flex items-center gap-2 hover:bg-white hover:text-black duration-300"
-                    onClick={openWhatsApp}
-                  >
-                    <MessageCircle size={20} />
-                    WhatsApp Now
-                  </button>
+                    <span className="block text-amber-300">
+                      Custom Keepsakes
+                    </span>
+                  </h1>
+
+                  <p className="mt-5 text-base md:text-lg text-gray-200">
+                    Made with Love • Pan India Delivery
+                  </p>
+
+                  <div className="flex flex-wrap gap-4 mt-8">
+                    <button
+                      onClick={() => navigate("/products")}
+                      className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:scale-105 duration-300"
+                    >
+                      Explore Products
+                    </button>
+
+                    <button
+                      onClick={openWhatsApp}
+                      className="border border-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white hover:text-black duration-300"
+                    >
+                      <MessageCircle size={20} />
+                      WhatsApp Now
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              {/* <div className="flex justify-center">
-            <img
-              src={Images.Hero}
-              alt="Gift"
-              className="rounded-3xl shadow-2xl w-full max-w-md hover:scale-105 duration-500"
-            />
-          </div> */}
+                {/* Right Side Empty because image is background */}
+                <div></div>
+              </div>
             </div>
           </section>
 
