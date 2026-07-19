@@ -57,7 +57,7 @@ export default function About() {
         <div className="bg-slate-950 text-white">
           {/* HERO */}
           <section
-            className="relative overflow-hidden h-[700px] md:h-[660px] bg-no-repeat bg-cover md:bg-contain bg-center md:[background-position:calc(100%-40px)_center]"
+            className="relative overflow-hidden h-[300px] md:h-[660px] bg-no-repeat bg-cover md:bg-contain bg-center md:[background-position:calc(100%-40px)_center]"
             style={{
               backgroundImage: `url(${Images.her})`,
             }}
