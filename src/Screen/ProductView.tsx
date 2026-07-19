@@ -5,6 +5,8 @@ import type { Product } from "../type";
 import InstagramEmbed from "../component/InstagramEmbed";
 import { useDispatch } from "react-redux";
 import { openModal } from "../Redux/Reducers/ModalReducer";
+import Loader from "../component/Loader";
+ import { FaHeart, FaAward, FaCheckCircle } from "react-icons/fa";
 
 export interface CategoryOption {
   _id: string;
@@ -91,9 +93,7 @@ function ProductView() {
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto p-5 min-h-[60vh] flex items-center justify-center">
-        <div className="animate-pulse text-gray-400 text-lg">
-          Loading product...
-        </div>
+        <Loader/>
       </div>
     );
   }
@@ -207,10 +207,41 @@ function ProductView() {
             Add to Cart
           </button>
         </div>
-        {/* <div className="mt-8 border-t border-gray-100 pt-6 space-y-2 text-sm text-gray-500">
-          <p>Free delivery on orders above ₹499</p>
-          <p>Easy returns within 7 days</p>
-        </div> */}
+       
+
+<div className="mt-8 border-t border-pink-100 pt-6">
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div className="flex items-center gap-3 bg-white rounded-xl shadow-sm border border-pink-100 p-4 hover:shadow-md transition">
+      <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">
+        <FaHeart className="text-pink-600 text-lg" />
+      </div>
+      <div>
+        <p className="font-semibold text-gray-800">500+ Happy Customers</p>
+        <p className="text-sm text-gray-500">Loved & Trusted</p>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-3 bg-white rounded-xl shadow-sm border border-pink-100 p-4 hover:shadow-md transition">
+      <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">
+        <FaAward className="text-yellow-500 text-lg" />
+      </div>
+      <div>
+        <p className="font-semibold text-gray-800">Premium Finish</p>
+        <p className="text-sm text-gray-500">Crafted with Care</p>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-3 bg-white rounded-xl shadow-sm border border-pink-100 p-4 hover:shadow-md transition">
+      <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+        <FaCheckCircle className="text-green-600 text-lg" />
+      </div>
+      <div>
+        <p className="font-semibold text-gray-800">100% Handmade</p>
+        <p className="text-sm text-gray-500">Customized for You</p>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   );

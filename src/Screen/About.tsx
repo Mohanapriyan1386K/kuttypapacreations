@@ -196,12 +196,12 @@ export default function About() {
           <section className="bg-gradient-to-r from-pink-600 to-purple-700 py-16">
             <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <h2 className="text-5xl font-bold">500+</h2>
+                <h2 className="text-5xl font-bold">1500+</h2>
                 <p>Happy Customers</p>
               </div>
 
               <div>
-                <h2 className="text-5xl font-bold">1000+</h2>
+                <h2 className="text-5xl font-bold">2000+</h2>
                 <p>Products Made</p>
               </div>
 
