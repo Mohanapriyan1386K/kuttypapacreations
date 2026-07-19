@@ -39,7 +39,7 @@ export default function ContactForm() {
   return (
     <>
       <SEO
-            title="Kutty Papa Creations | Customized Gifts"
+            title="Papa Kutty Creations | Customized Gifts"
             description="Buy customized gifts, resin art, mugs, photo frames and handmade creations."
             keywords="custom gifts,resin art,photo frame,mugs,birthday gifts"
             url="https://kuttypapacreations-nine.vercel.app/contact"

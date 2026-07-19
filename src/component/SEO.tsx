@@ -8,7 +8,7 @@ interface SEOProps {
   url?: string;
 }
 
-const SITE_NAME = "Kutty Papa Creations";
+const SITE_NAME = "Papa Kutty Creations";
 const SITE_URL = "https://kuttypapacreations-nine.vercel.app";
 const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
 
