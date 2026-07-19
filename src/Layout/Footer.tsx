@@ -45,14 +45,14 @@ export default function Footer() {
               <NavLink to="/products" className="hover:text-pink-400">
                 Products
               </NavLink>
-
+{/* 
               <NavLink to="/about" className="hover:text-pink-400">
                 About
-              </NavLink>
+              </NavLink> */}
 
-              <NavLink to="/gallery" className="hover:text-pink-400">
+              {/* <NavLink to="/gallery" className="hover:text-pink-400">
                 Gallery
-              </NavLink>
+              </NavLink> */}
 
               <NavLink to="/contact" className="hover:text-pink-400">
                 Contact
@@ -71,17 +71,17 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-pink-500" />
-                <span>+91 98765 43210</span>
+                <span>+91 86672 22695</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <IoMdMail size={18} className="text-pink-500" />
-                <span>papakuttycreations@gmail.com</span>
+                <span>papakutty24712@gmail.com</span>
               </div>
 
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-pink-500 mt-1" />
-                <span>Chennai, Tamil Nadu</span>
+                <span>Trichy, Tamil Nadu</span>
               </div>
 
             </div>
@@ -96,7 +96,7 @@ export default function Footer() {
             <div className="flex gap-4">
 
               <a
-                href="https://instagram.com/"
+                href="https://www.instagram.com/papakutty_creations?igsh=MXR0YmRjenZtb2trbA=="
                 target="_blank"
                 rel="noreferrer"
                 className="bg-slate-800 p-3 rounded-full hover:bg-pink-500 transition"
@@ -116,7 +116,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/7904595497"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-slate-800 p-3 rounded-full hover:bg-green-500 transition"
@@ -127,7 +127,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/917904595497"
               target="_blank"
               rel="noreferrer"
               className="mt-6 inline-block bg-pink-500 hover:bg-pink-600 px-6 py-3 rounded-full text-white font-semibold"
@@ -150,7 +150,7 @@ export default function Footer() {
               Privacy Policy
             </NavLink>
 
-            <NavLink to="/terms" className="hover:text-pink-400">
+            <NavLink to="/terms_and_conditions" className="hover:text-pink-400">
               Terms & Conditions
             </NavLink>
           </div>

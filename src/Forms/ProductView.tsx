@@ -119,11 +119,11 @@ export default function ProductView({ product, path }: Props) {
         </div>
       </div>
 
-      {path == "client" && (
+      {/* {path == "client" && (
         <div className="flex items-center justify-center "   >
           <InstagramEmbed url={product.instagram} />
         </div>
-      )}
+      )} */}
 
       {/* Details */}
       <div className="grid gap-5 md:grid-cols-2">

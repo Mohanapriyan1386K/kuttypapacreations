@@ -12,6 +12,7 @@ import PageAnimation from "../component/PageAnimation";
 
 import { useNavigate } from "react-router-dom";
 import SEO from "../component/SEO";
+import ProductPage from "./Product";
 
 export default function About() {
   const navigate = useNavigate();
@@ -56,9 +57,11 @@ export default function About() {
         <div className="bg-slate-950 text-white">
           {/* HERO */}
           <section
-            className="relative overflow-hidden  bg-no-repeat bg-center bg-contain h-[580px]"
+            className="relative overflow-hidden bg-no-repeat h-[660px]"
             style={{
-              backgroundImage: `url(${Images.Cover})`,
+              backgroundImage: `url(${Images.her})`,
+              backgroundSize: "contain",
+              backgroundPosition: "calc(100% - 40px) center", // 40px gap from right
             }}
           >
             <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 items-center gap-10">
@@ -68,22 +71,20 @@ export default function About() {
                   Handmade Resin Gifts
                 </span>
 
-                <h1 className="text-5xl md:text-6xl font-extrabold mt-6 leading-tight">
-                  Papakutty
-                  <span className="block text-yellow-300">
-                    Custom Gifts & Creations
+                <h1 className="text-5xl md:text-5xl font-extrabold mt-6 leading-tight">
+                  {/* Papakutty */}
+                  <span className="block text-amber-300">
+                    Handmade Resin Gifts & Personalized Custom Keepsakes
                   </span>
                 </h1>
 
                 <p className="mt-6 text-lg text-slate-100 leading-8">
-                  We create beautiful handmade resin keychains, miniatures,
-                  photo gifts, and customized keepsakes that turn memories into
-                  lifelong treasures.
+                  Made with Love | Pan India Delivery
                 </p>
 
                 <div className="flex flex-row gap-4 mt-8 ">
                   <button
-                    className="bg-white text-black  px-4 md:px-7 md:py-3 text-[14px] rounded-full font-semibold hover:scale-105 duration-300"
+                    className="bg-white text-black  px-4 md:px-4 md:py-2 text-[12px] rounded-full font-semibold hover:scale-105 duration-300"
                     onClick={() => navigate("/products")}
                   >
                     Explore Products
@@ -94,7 +95,7 @@ export default function About() {
                     onClick={openWhatsApp}
                   >
                     <MessageCircle size={20} />
-                    WhatsApp Us
+                    WhatsApp Now
                   </button>
                 </div>
               </div>
@@ -109,7 +110,8 @@ export default function About() {
             </div>
           </section>
 
-          {/* ABOUT */}
+          <ProductPage />
+
           <section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-14 items-center">
             <img src={Images.Hero} className="rounded-3xl shadow-xl" />
 
@@ -128,8 +130,6 @@ export default function About() {
               </p>
             </div>
           </section>
-
-          {/* FEATURES */}
 
           <section className="bg-slate-900 py-20">
             <div className="max-w-7xl mx-auto px-6">

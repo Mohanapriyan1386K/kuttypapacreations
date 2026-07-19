@@ -7,10 +7,12 @@ import { motion } from "framer-motion";
 import AnimatedCard from "../component/AnimatedCard";
 import SEO from "../component/SEO";
 import Loader from "../component/Loader";
+import { useNavigate } from "react-router-dom";
 
 function ProductPage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const navigate=useNavigate()
 
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -244,7 +246,9 @@ function ProductPage() {
 
                     <button
                       type="button"
-                      onClick={() => handleViewModalOpen(item)}
+                      // onClick={() => handleViewModalOpen(item)}
+
+                      onClick={() => navigate(`/productView/${encodeURIComponent(item.slug)}`)}
                       className="mt-auto w-full rounded-xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
                     >
                       View Product

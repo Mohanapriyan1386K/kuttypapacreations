@@ -91,7 +91,7 @@ export default function Sidebar({ open, setOpen }:any) {
         </div>
 
         <div className="border-b border-slate-700 p-6 text-2xl font-bold">
-          Rico Tech
+          Papa Kutty Creations
 
           
         </div>

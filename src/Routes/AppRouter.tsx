@@ -6,6 +6,9 @@ import AdminLayout from "../Layout/AdminLayout";
 import PublicRoute from "./PublicRoute";
 import ProtectedRoute from "./ProtectedRoute";
 import Loader from "../component/Loader";
+import ProductView from "../Screen/ProductView";
+import TermsAndConditions from "../Screen/TermsAndConditions";
+import PrivacyPolicy from "../Screen/PrivacyPolicy";
 
 // Lazy Load Pages
 const About = lazy(() => import("../Screen/About"));
@@ -43,6 +46,10 @@ export const AppRouter = createBrowserRouter([
         element: Loadable(<Product />),
       },
       {
+        path: "productView/:slug",
+        element:Loadable(<ProductView/>)
+      },
+      {
         path: "gallery",
         element: Loadable(<Gallery />),
       },
@@ -50,6 +57,14 @@ export const AppRouter = createBrowserRouter([
         path: "contact",
         element: Loadable(<Contact />),
       },
+      {
+        path:"terms_and_conditions",
+        element:Loadable(<TermsAndConditions/>)
+      },
+      {
+        path:"/privacy",
+        element:Loadable(<PrivacyPolicy/>)
+      }
     ],
   },
 

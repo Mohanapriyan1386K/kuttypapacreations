@@ -159,7 +159,7 @@ function ProductMangement() {
 
               <input
                 type="text"
-                placeholder="Search laptop..."
+                placeholder="Search Product..."
                 className="w-full rounded-xl border py-2 pl-10 pr-4 outline-none focus:border-blue-500"
                 onChange={handleSearch}
               />

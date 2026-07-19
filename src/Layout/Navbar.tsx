@@ -18,7 +18,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <NavLink to="/" className="text-2xl font-bold text-pink-500">
-          Papakutty
+          Papa Kutty Creations
         </NavLink>
 
         {/* Desktop Menu */}

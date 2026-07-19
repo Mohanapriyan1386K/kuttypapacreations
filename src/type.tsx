@@ -6,7 +6,9 @@ export interface Category {
 
 export interface Product {
   _id: string;
+  slug:string;
   title: string;
+  instagram:string;
   category: Category;
   description: string;
   price: number;

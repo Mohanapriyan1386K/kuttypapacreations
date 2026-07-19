@@ -2,9 +2,10 @@ import { useEffect } from "react";
 
 interface Props {
   url: string;
+  width:string
 }
 
-export default function InstagramEmbed({ url }: Props) {
+export default function InstagramEmbed({ url,width }: Props) {
   useEffect(() => {
     const loadInstagram = () => {
       if ((window as any).instgrm) {
@@ -31,7 +32,8 @@ export default function InstagramEmbed({ url }: Props) {
       data-instgrm-permalink={url}
       data-instgrm-version="14"
       style={{
-        width: "100%",
+        height:500,
+        width,
         maxWidth: "540px",
         margin: "0 auto",
       }}
