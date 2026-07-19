@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Category, Product } from "../type";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 // import { openModal } from "../Redux/Reducers/ModalReducer";
 import { API_BASE } from "../Constent/Constent";
 import { motion } from "framer-motion";
