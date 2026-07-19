@@ -34,18 +34,18 @@ function ProductPage() {
     }
   };
 
-  const handleViewModalOpen = (data: any) => {
-    dispatch(
-      openModal({
-        modalname: "PRODUCTVIEW",
-        data: {
-          product: data,
-          path: "client",
-          width: "5xl",
-        },
-      }),
-    );
-  };
+  // const handleViewModalOpen = (data: any) => {
+  //   dispatch(
+  //     openModal({
+  //       modalname: "PRODUCTVIEW",
+  //       data: {
+  //         product: data,
+  //         path: "client",
+  //         width: "5xl",
+  //       },
+  //     }),
+  //   );
+  // };
 
   // Get Products
   const getProducts = async (pageNo = 1, categoryId = "", reset = false) => {
