@@ -104,6 +104,7 @@ function ProductPage() {
   // Category Click
   const handleCategoryClick = (item: Category) => {
     setSelectedCategory(item._id);
+    setProducts([])
     setPage(1);
     setHasMore(true);
     getProducts(1, item._id, true);
@@ -125,7 +126,7 @@ function ProductPage() {
         keywords="custom gifts,resin art,photo frame,mugs,birthday gifts"
         url="https://kuttypapacreations-nine.vercel.app/products"
       />
-      <div className="bg-amber-100">
+      <div className="">
         {/* Sticky Category */}
         <div className="sticky top-14 z-50 bg-[#3F4555]/90 backdrop-blur-lg shadow-lg border-b border-white/10">
           <div className="max-w-7xl mx-auto overflow-x-auto scrollbar-hide">
