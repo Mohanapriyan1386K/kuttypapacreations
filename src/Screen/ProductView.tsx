@@ -207,10 +207,10 @@ function ProductView() {
             Add to Cart
           </button>
         </div>
-        <div className="mt-8 border-t border-gray-100 pt-6 space-y-2 text-sm text-gray-500">
+        {/* <div className="mt-8 border-t border-gray-100 pt-6 space-y-2 text-sm text-gray-500">
           <p>Free delivery on orders above ₹499</p>
           <p>Easy returns within 7 days</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
