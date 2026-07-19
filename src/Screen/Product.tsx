@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Category, Product } from "../type";
 import { useDispatch } from "react-redux";
-import { openModal } from "../Redux/Reducers/ModalReducer";
+// import { openModal } from "../Redux/Reducers/ModalReducer";
 import { API_BASE } from "../Constent/Constent";
 import { motion } from "framer-motion";
 import AnimatedCard from "../component/AnimatedCard";
@@ -22,7 +22,7 @@ function ProductPage() {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // Get Categories
   const getCategories = async () => {
     try {
