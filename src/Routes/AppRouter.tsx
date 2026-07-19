@@ -5,6 +5,7 @@ import MainLayout from "../Layout/MainLayout";
 import AdminLayout from "../Layout/AdminLayout";
 import PublicRoute from "./PublicRoute";
 import ProtectedRoute from "./ProtectedRoute";
+import Loader from "../component/Loader";
 
 // Lazy Load Pages
 const About = lazy(() => import("../Screen/About"));
@@ -19,11 +20,7 @@ const ProductMangement = lazy(() => import("../Screen/Admin/ProductMangement"));
 const CategoryManagement = lazy(() => import("../Screen/Admin/CategoryManagement"));
 const EnquiryMangeMent = lazy(() => import("../Screen/Admin/EnquriryMangement"));
 
-const Loader = () => (
-  <div className="flex items-center justify-center h-screen">
-    <div className="w-12 h-12 border-4 border-pink-500 border-t-transparent rounded-full animate-spin"></div>
-  </div>
-);
+
 
 const Loadable = (Component: React.ReactNode) => (
   <Suspense fallback={<Loader />}>
