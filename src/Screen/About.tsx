@@ -56,7 +56,7 @@ export default function About() {
         <div className="bg-slate-950 text-white">
           {/* HERO */}
           <section
-            className="relative overflow-hidden  bg-no-repeat bg-center bg-contain h-[530px]"
+            className="relative overflow-hidden  bg-no-repeat bg-center bg-contain h-[580px]"
             style={{
               backgroundImage: `url(${Images.Cover})`,
             }}
